@@ -1,0 +1,1 @@
+{"object":"page","entry":[{"id":"247622475109334","time":1711630040705,"messaging":[{"sender":{"id":"7686062908112271"},"recipient":{"id":"247622475109334"},"timestamp":1711630040537,"message":{"mid":"m_XchNIdpto3SRJxn6w6gQkrPPanHr3ytySEkRql0FaJ266ajqa-745bNLPvVcSHYj7LNGEkElyHvU7o48f22Rrg","text":"Hi"}}]}]}
