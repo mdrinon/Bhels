@@ -2,72 +2,51 @@
 <?php include('partials/topbar.php'); ?>
 <?php include('partials/sidebar.php'); ?>
 
+<?php include 'dbconnect.php'; ?>
 
-  <section class="main-content">
+<section class="main-content">
     <div class="blog-container">
-
         <div class="blog-left-container">
-
             <div class="blog-header">
                 <h2>DISCOVER OUR LATEST POST</h2>
             </div>
 
             <div class="blog-content">
+                <?php
+                // Select the collection
+                $collection = $db->blogposts;
 
-                <div class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="images/blog/blog1.jpg" alt="">
-                    </div>
-                    <div class="blog-card-content">
-                        <h4><b>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</b></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore ullam obcaecati molestias eos, sit quod laudantium recusandae error id neque tempora quaerat esse numquam veritatis exercitationem ipsum at? Sed, autem!
-                        <a href="#" class="btn">Read More</a></p>
-                        
-                        <div class="blog-card-bot-section">
-                            <img src="" alt="">
-                            <p class="Designer" >Designer Name</p>
-                            <p>12th Dec 2023</p>
+                // Fetch the blog posts
+                $cursor = $collection->find();
+
+                foreach ($cursor as $post): ?>
+                    <div class="blog-card">
+                        <div class="blog-card-image">
+                            <?php if ($post['media_type'] == 'video'): ?>
+                                <video controls>
+                                    <source src="ADMIN/<?php echo $post['media_url']; ?>" type="video/mp4">
+                                </video>
+                            <?php else: ?>
+                                <img src="ADMIN/<?php echo $post['media_url']; ?>" alt="">
+                            <?php endif; ?>
+                        </div>
+                        <div class="blog-card-content">
+                            <h4><b><?php echo $post['title']; ?></b></h4>
+                            <p><?php echo $post['content']; ?>
+                            
+                            <div class="blog-card-bot-section">
+
+                                 <img src="ADMIN/uploads/avatars/<?php echo $post['designer_avatar']; ?>" alt="">
+                                
+                                <p class="Designer"><?php echo $post['designer_name']; ?></p>
+                                <p><?php echo $post['date']; ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="images/blog/blog1.jpg" alt="">
-                    </div>
-                    <div class="blog-card-content">
-                        <h4><b>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</b></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore ullam obcaecati molestias eos, sit quod laudantium recusandae error id neque tempora quaerat esse numquam veritatis exercitationem ipsum at? Sed, autem!
-                        <a href="#" class="btn">Read More</a></p>
-                        
-                        <div class="blog-card-bot-section">
-                            <img src="" alt="">
-                            <p class="Designer" >Designer Name</p>
-                            <p>12th Dec 2023</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="images/blog/blog1.jpg" alt="">
-                    </div>
-                    <div class="blog-card-content">
-                        <h4><b>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</b></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore ullam obcaecati molestias eos, sit quod laudantium recusandae error id neque tempora quaerat esse numquam veritatis exercitationem ipsum at? Sed, autem!
-                        <a href="#" class="btn">Read More</a></p>
-                        
-                        <div class="blog-card-bot-section">
-                            <img src="" alt="">
-                            <p class="Designer" >Designer Name</p>
-                            <p>12th Dec 2023</p>
-                        </div>
-                    </div>
-                </div>
-
+                <?php endforeach; ?>
             </div>
-
         </div>
+
 
         <div class="blog-right-container">
 
@@ -84,48 +63,20 @@
 
             <br><h3>TOP POSTS</h3>
 
-            <div class="blog-right-card">
-                <div class="blog-right-card-img">
-                    <img src="" alt="">
-                </div>
-                <h4><b>Post-Event Survey Questions</h4></b>
-            </div>
+            <?php
+            // Fetch the top posts (e.g., based on views or likes)
+            $topPostsCursor = $collection->find([], ['limit' => 5, 'sort' => ['views' => -1]]);
 
-            <div class="blog-right-card">
-                <div class="blog-right-card-img">
-                    <img src="" alt="">
+            foreach ($topPostsCursor as $topPost): ?>
+                <div class="blog-right-card">
+                    <div class="blog-right-card-img">
+                        <video autoplay muted loop style="height: 50px;"> 
+                            <source src="ADMIN/images/svg/cake_placeholder.mp4">
+                        </video>
+                    </div>
+                    <h4><b><?php echo $topPost['title']; ?></b></h4>
                 </div>
-                <h4><b>Welcome to..</h4></b>
-            </div>
-
-            <div class="blog-right-card">
-                <div class="blog-right-card-img">
-                    <img src="" alt="">
-                </div>
-                <h4><b>Post-Event Survey Questions</h4></b>
-            </div>
-
-            <div class="blog-right-card">
-                <div class="blog-right-card-img">
-                    <img src="" alt="">
-                </div>
-                <h4><b>Welcome to..</h4></b>
-            </div>
-
-            <div class="blog-right-card">
-                <div class="blog-right-card-img">
-                    <img src="" alt="">
-                </div>
-                <h4><b>Post-Event Survey Questions</h4></b>
-            </div>
-
-            <div class="blog-right-card">
-                <div class="blog-right-card-img">
-                    <img src="" alt="">
-                </div>
-                <h4><b>Welcome to..</h4></b>
-            </div>
-
+            <?php endforeach; ?>
 
             <br>
             <h3>FOLLOW US</h3>
@@ -157,21 +108,14 @@
             </div>
         </div>
 
+    </div>
 
+  </section>
 
+  <section class="create-post">
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="create-button">
+    <a href="Create_new_post.php"><img src="images/svg/icons8-edit-64.png"></a>
     </div>
 
   </section>

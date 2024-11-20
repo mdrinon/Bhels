@@ -1,0 +1,354 @@
+/* ORDERS PAGE */
+.orders-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 10px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.orders-left-container { 
+    margin: 0;
+    padding: 10px;
+    grid-column: 1 / span 1;
+    background-color: #ffffff;
+}
+.orders-right-container {
+    margin: 0;
+    padding: 10px;
+    grid-column: 2 / span 1;
+    background-color: #ffffff;
+}
+.row-wrap {
+    padding-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.order-card {
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+    align-items: center;
+}
+.order-card .tbl-card-header {
+    margin: 0;
+    padding: 10px 0;
+    width: auto;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000000;
+    border-bottom: solid 2px var(--secondary-color);
+}
+.order-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-height: 640px; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+.order_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    /* min-height: 150px; */
+}
+.order_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.order_status {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: -20px 10px 10px;
+}
+.Pending {
+    background: #ff884d;
+    color: #ffffff;
+}
+.Processing {
+    background: #ffcc00;
+    color: #ffffff;
+}
+.Confirmed {
+    background: #4c5fdb;
+    color: #ffffff;
+}
+.Completed {
+    background: #4CAF50;
+    color: #ffffff;
+}
+.Cancelled {
+    background: #ff4d4d;
+    color: #ffffff;
+}
+.order_status > p {
+    margin: 0;
+    padding: 5px 7px;
+    height: 20px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+.order_data_image_container img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+.order_details_content, .delivery_details_content {
+    flex: 1;
+    padding: 0 10px;
+}
+.order_details_content p, .delivery_details_content p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    color: #000000;
+    position: relative;
+    padding-left: 25px; /* Adjust the padding to make space for the icon */
+}
+.order_details_content p::before, .delivery_details_content p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Adjust the width of the icon */
+    height: 20px; /* Adjust the height of the icon */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.order_payment_and_notes {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+}
+.order_note {
+    flex: 1;
+}
+.order_total_payment {
+    width: 35%;
+    margin-left: 20px;
+    min-width: 190px;
+    display: flex;
+    flex-direction: column;
+}
+
+.order_note p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    color: #000000;
+}
+.order_total_payment > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    font-weight: 500;
+}
+.order_total_payment > div > p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    color: #000000;
+}
+.order_action {
+    display: flex;
+    width: 100px;
+    flex-direction: column-reverse;
+    align-items: stretch;
+}
+.order_action .btn {
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.red_btn {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    border: none;
+}
+.green_btn {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+}
+.total-payment-section {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 40%;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+    border-top: solid 2px var(--secondary-color);
+}
+.order-card .order-total-payment {
+    margin: 0;
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-content: start;
+}
+.order-total-payment .left {
+    margin: 0;
+    padding: 0;
+    grid-row: 1 / span 1;
+}
+.order-total-payment .left div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+.order-total-payment .right div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+.order-total-payment .left .total {
+    margin-top: 4px;
+    padding-top: 3px;
+    font-weight: 600;
+    border-top: solid 1.5px var(--secondary-color);
+}
+.order-total-payment .right .total {
+    margin-top: 4px;
+    padding-top: 3px;
+    font-weight: 600;
+    border-top: solid 1.5px var(--secondary-color);
+}
+.orders-right-container .row-wrap .recent-orders {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+}
+.orders-right-container .row-wrap .recent-orders h4 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000000;
+    width: 100%;
+    border-bottom: solid 2px var(--secondary-color);
+}
+.recent-orders .recent-order-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    width: 100%;
+    height: 100px;
+}
+.recent-order-img {
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    background: #f0f0f0;
+    border-radius: 50%;
+}
+.recent-order-card .product-info {
+    align-items: start;
+    padding: 10px;
+    margin: 0;
+}
+.product-info p {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #000000;
+}
+.show_hide-pd {
+    display: none;
+}
+.recent-order-card:hover .recent-order-img {
+    display: none;
+}
+.recent-order-card:hover .show_hide {
+    display: none;
+}
+.recent-order-card:hover .show_hide-pd {
+    display: block;
+    cursor: pointer;
+    z-index: 999;
+    height: fit-content;
+    width: 100%;
+    white-space: wrap;
+}
+.order-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+.order-status img {
+    width: 20px;
+    aspect-ratio: 1/1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Collapsible button */
+.collapsible {
+    background-color: #f1f1f1;
+    color: #000;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.collapsible.active, .collapsible:hover {
+    background-color: #ccc;
+}
+
+/* Collapsible content */
+.bottom_details_container {
+    padding: 0 18px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden; /* Prevent layout shifts */
+}
+
+/* Collapsible active state */
+.collapsible.active {
+    background-color: #f1f1f1; /* Optional: Add a background color when active */
+}
+
+.collapsible.active + .bottom_details_container {
+    display: block; /* This will be toggled via JS */
+}
+

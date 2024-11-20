@@ -1,0 +1,190 @@
+.placed_order_section_container {
+    margin: auto;
+    padding: 18px;
+    max-width: 600px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+}
+.placed_order_section_container h2 {
+    margin: 10px auto;
+    padding: 10px 18px;
+}
+.placed_order_section_title {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+.delivery_details_content , .customer_details_content {
+    border-top: 1px solid #f1f1f1;
+    padding: 20px 18px;
+}
+
+.collapsible {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: none;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    border-top: 1px solid #f1f1f1;
+}
+
+/* CSS for the form */
+.delivery_details_content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.delivery_details_content label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.delivery_details_content input,
+.delivery_details_content select,
+.delivery_details_content textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 40px;
+}
+
+.delivery_details_content textarea {
+    resize: vertical;
+}
+
+.delivery_details_content input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.delivery_details_content input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Fluid flex layout for input fields */
+.delivery_details_content .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.delivery_details_content .form-group > label {
+    flex: 0 0 100%;
+    margin: 10px auto 0;
+}
+.delivery_details_content .form-group > div {
+    flex: 1;
+    min-width: 30%;
+    align-content: end;
+}
+#delivery_date_time > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+}
+.customer_details_content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.customer_details_content .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.customer_details_content .form-group > div {
+    flex: 1;
+    min-width: 40%;
+    align-content: end;
+    margin-right: 20px;
+}
+
+/* Add styles for the carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    display: none;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+.carousel .prev, .carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+/* Add styles for the image previews */
+.image-previews {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    margin-top: 10px;
+    overflow: hidden;
+    max-height: 60px;
+}
+
+.image-previews img {
+    cursor: pointer;
+    border: 2px solid transparent;
+    max-width: 40px;
+}
+
+.image-previews img.active {
+    border-color: #000;
+    display: none; /* Hide the active image in the previews */
+}
