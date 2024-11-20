@@ -1,0 +1,102 @@
+.sales-report-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: none;
+    border-radius: 8px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sales-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    gap: 10px;
+    flex: 1 1 100%;
+}
+
+.summary-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 calc(33.333% - 20px);
+}
+
+.summary-item h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.summary-item p {
+    font-size: 24px;
+    color: #cb5584;
+}
+
+.top-selling-cakes,
+.monthly-sales,
+.top-customers,
+.average-order-value {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex: 1 1 calc(50% - 20px);
+}
+
+.top-selling-cakes h3,
+.monthly-sales h3,
+.top-customers h3,
+.average-order-value h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.top-selling-cakes ul,
+.monthly-sales ul,
+.top-customers ul {
+    list-style: none;
+    padding: 0;
+}
+
+.top-selling-cakes li,
+.monthly-sales li,
+.top-customers li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.average-order-value p {
+    font-size: 24px;
+    color: #cb5584;
+}
+
+.export-button {
+    padding: 10px 20px;
+    background-color: #cb5584;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.export-button:hover {
+    background-color: #c64581;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
